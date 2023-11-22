@@ -1,11 +1,7 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
-// The `/api/products` endpoint
-
-// get all products
-// find all products
-  // be sure to include its associated Category and Tag data
+// GET all products
 router.get('/', async (req, res) => {
   try {
     const productData = await Product.findAll({
@@ -29,9 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one product
-// find a single product by its `id`
-// be sure to include its associated Category and Tag data
+// Get one product by its `id`
 router.get('/:id', async (req, res) => {
   try {
     const productId = req.params.id;
@@ -56,7 +50,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// create new product
+// Create new product
 router.post('/', async (req, res) => {
   /* req.body should look like this...
     {
@@ -88,7 +82,7 @@ router.post('/', async (req, res) => {
     });
 });
 
-// update product
+// Update product
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -128,12 +122,11 @@ router.put('/:id', (req, res) => {
       return res.json(product);
     })
     .catch((err) => {
-      // console.log(err);
       res.status(400).json(err);
     });
 });
 
-// delete one product by its `id` value
+// Delete one product by its `id` value
 router.delete('/:id', async  (req, res) => {
   try {
     const productId = req.params.id;
@@ -146,7 +139,6 @@ router.delete('/:id', async  (req, res) => {
         res.status(404).json({ message: 'Product Not Found' });
       } else {
         res.json({ message: 'Product Deleted Successfully' });
-        console.log('Product Deleted');
       } 
     } catch (err) {
         console.error(err);
