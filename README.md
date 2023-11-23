@@ -4,11 +4,6 @@
 
 I wanted to build a backend for an e-commerce website for my company that uses the latest technologies. This will help my company compete with other e-commerce companies. I needed to build an application that would allow my company to view and interact with information stored in the database. To do this, I took a working Express.js API and configured it to use Sequelize to interact with a MySQL database. Now you can successfully create, read, update, and delete data in the database. 
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
 ## Installation
 
 To install this application and get the development enviroment up and running:
@@ -17,17 +12,19 @@ To install this application and get the development enviroment up and running:
 2. Open the file and run the command `npm i` to install the dependencies needed.
 3. To connect to the database using MySQL, run the command `mysql -u root`.
 4. Run the command `SOURCE db/schema.sql;` to source the schema. Then `quit`.
-5. To seed the database enter `npm run seed`. 
-6. To connect to the server `node server.js`.
+5. To seed the database enter `node seeds`. 
+6. To connect to the server `npm start`.
 7. Use Insomnia to view data in the database. 
 
 ## Usage
 
 To use this application and view the data in the database with Insomnia. Use your server (localhost:3001) and different endpoints of the express /api to see the data in the database. The endpoints `/api/products`, `/api/categores`, and `/api/tags` will show you the corresponding data. For example perform a GET request to `http://localhost:3001/api/products` to see all of the products in the database. Perform a POST request to add a product to the database. A PUT request will allow you to update a specific product given the id. A DELETE request will allow you to delete a product given its id.  With this application you are able to GET, POST, PUT, and DELETE any Product, Category, or Tag. 
 
-Video Demonstration: 
+Link To Video Demonstration --> https://drive.google.com/file/d/1WHzsqdRpPFjzvfNLpucPvAbzJM35jPSK/view 
 
-![alt text](assets/images/screenshot.png)
+-  Video Walkthrough
+
+![GIF DEMO](/assets/Media/E-Commerce%20BackEnd%20Video%20Walkthrough.gif)
 
 ## Credits
 
